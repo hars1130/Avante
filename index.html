@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Avante</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script>
+            $(document).ready(function(){ 
+                var a=0;
+                $(window).scroll(function(){
+                    var sTop =  $('#scroller-start-id').offset().top - window.innerHeight;
+                    if ($(window).scrollTop() > sTop) { 
+                        $('#scroll').fadeIn(); 
+                    } 
+                    else { 
+                        $('#scroll').fadeOut(); 
+                    }
+                    var oTop = $('#countersId').offset().top - window.innerHeight;
+                if (a == 0 && $(window).scrollTop() > oTop) {
+                    $('.counter').each(function() {
+                      var $this = $(this),
+                      countTo = $this.attr('data-target');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                    countNum: countTo
+                    },
+                    {
+                    duration: 6000,
+                    easing: 'swing',
+                    step: function() {
+                    $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum);
+                    }
+                 });
+                 });
+                 a = 1;
+                }
+                });
+		        if ($(".blogBox:hidden").length != 0) {
+			    $("#loadMore").show();
+		        }		
+		        $("#loadMore").on('click', function (e) {
+			    e.preventDefault();
+			    $(".moreBox:hidden").slice(0, 3).slideDown();
+			    if ($(".moreBox:hidden").length == 0) {
+				$("#loadMore").fadeOut('slow');
+			}
+		});
+            }); 
+                $('#scroll').click(function(){ 
+                $("html, body").animate({ scrollTop: 0 }, 600); 
+                return false; 
+                });
+    </script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+      <a href="#" id="scroll" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>    
+      <div class="container-fluid padding banner">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="display-5">We're happy to tell you about our new product</h2>
+                <h1><span>AN AWESOME APP</span></h1>
+            </div>
+            <div class="col-xs-6 col-sm-12">
+                    <a class="btn btn-outline-light btn-lg custom-border" href="#" role="button">
+                    <i class="fab fa-apple custom-margin"></i></i>Apple IOS</a>
+                    <a class="btn btn-outline-light btn-lg custom-border" href="#" role="button">
+                    <i class="fab fa-android custom-margin"></i>Android</a>
+            </div>
+            <div class="col-xs-12 col-sm-12 offset-md-2 col-md-8">
+                <img class="img-fluid" src="img/slider-img.png"/>
+            </div>
+        </div>
+      </div>
+      <div class="container-fluid padding" id="scroller-start-id">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <img class="zoom-in" src="img/icon-bucket.png"/>
+                <h3>Unique Design </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <img src="img/icon-signboard.png"/>
+                <h3>User Friendly</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <img src="img/icon-human.png"/>
+                <h3>Excellent Support</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <img class="zoom-in" src="img/icon-trophy.png"/>
+                <h3>App Of The Year</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padding feature">
+        <div class="row text-center">
+            <div class="col-12 title padding">
+                <h2>Amazing <span>Features</span></h2>
+            </div>
+            <div class="col-xs-12 col-xl-4 feature-container">
+                <div class="feature-item">
+                    <div class="circle">
+                        <div class="circle-inner">
+                            <i class="fa fa-chart-area facircle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h5>CLEAN DESIGN</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="circle">
+                        <div class="circle-inner">
+                        <i class="fa fa-globe facircle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h5>54 LANGUAGES</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="circle">
+                        <div class="circle-inner">
+                            <i class="fa fa-user-md facircle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h5>5000+ SUPPORTERS</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-xl-4">
+                <img class="phone-img" src="img/phone-img.png"/>
+            </div>
+            <div class="col-xs-12 col-xl-4 feature-container">
+                <div class="feature-item">
+                    <div class="circle">
+                        <div class="circle-inner">
+                            <i class="fas fa-shield-alt facircle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h5>FAST CONNECT</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="circle">
+                        <div class="circle-inner">
+                        <i class="fa fa-stethoscope facircle" aria-hidden="true"></i>
+                    </div>
+                    </div>
+                    <div class="feature-info">
+                        <h5>FREE UPDATES</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="circle">
+                        <div class="circle-inner">
+                            <i class="fa fa-life-ring facircle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h5>50+ THEMES</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="container-fluid padding facts" id="countersId">
+        <div class="row text-center padding">
+            <div class="col-12 title">
+                <h2>Some <span>Facts</span></h2>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 fact-item">
+                <div class="circle">
+                    <div class="circle-mid">
+                    <div class="circle-inner">
+                        <span class="counter" data-target="1991">1700</span><br>
+                        calls
+                    </div>
+                    <i class="fas fa-phone facircle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 fact-item">
+                <div class="circle">
+                    <div class="circle-mid">
+                    <div class="circle-inner" >
+                        <span class="counter" data-target="5000">1700</span><br>
+                        Users
+                    </div>
+                    <i class="fas fa-user facircle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 fact-item">
+                <div class="circle">
+                    <div class="circle-mid">
+                    <div class="circle-inner">
+                        <span class="counter" data-target="10000">1700</span><br>
+                        Downloads
+                    </div>
+                    <i class="fas fa-cloud-download-alt facircle download-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 fact-item">
+                <div class="circle">
+                    <div class="circle-mid">
+                    <div class="circle-inner">
+                        <span class="counter" data-target="2390">1700</span><br>
+                        Mails
+                    </div>
+                    <i class="fas fa-envelope facircle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="dark">
+    <div class="container-fluid padding why-choose-avante-parent-container">
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-6">
+                <img src="img/bg-tilted.png"/>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h2 class="head"><span>Why</span> Choose Avante</h2>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Lorem ipsum dolor sit amet
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                          Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header collapsed" id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        consectetur adipiscing elit
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header collapsed" id="headingThree" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        quinoa nesciunt laborum eiusmod
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header collapsed" id="headingFour" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            enim eiusmod high life accusamus
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                          <div class="card-body">
+                            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-container">
+    <div class="container">
+        <div class="timeline-title">
+            <h1 id="timeline"><span>Event</span> Calendar</h1>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <ul class="timeline">
+            <li class="blogBox moreBox">
+              <div class="timeline-badge "></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <img src="img/events/calendar-card-image.jpg"/>
+                </div>
+                <div class="timeline-body">
+                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted blogBox moreBox">
+              <div class="timeline-badge "></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <img src="img/events/calendar-card-image2.jpg"/>
+                </div>
+                <div class="timeline-body">
+                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+              </div>
+            </li>
+            <li class="blogBox moreBox">
+              <div class="timeline-badge"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <img src="img/events/calendar-card-image.jpg"/>
+                </div>
+                <div class="timeline-body">
+                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted blogBox moreBox hide">
+            <div class="timeline-badge"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <img src="img/events/calendar-card-image2.jpg"/>
+                </div>
+                <div class="timeline-body">
+                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+              </div>
+            </li>
+            <li class="blogBox moreBox hide">
+              <div class="timeline-badge"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <img src="img/events/calendar-card-image.jpg"/>
+                </div>
+                <div class="timeline-body">
+                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted blogBox moreBox hide">
+              <div class="timeline-badge"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <img src="img/events/calendar-card-image2.jpg"/>
+                </div>
+                <div class="timeline-body">
+                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                  <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+              </div>
+            </li>
+            <li class="blogBox moreBox hide">
+                <div class="timeline-badge"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <img src="img/events/calendar-card-image.jpg"/>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                    <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted blogBox moreBox hide">
+                <div class="timeline-badge "></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <img src="img/events/calendar-card-image2.jpg"/>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                    <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>    
+                </div>
+                </div>
+              </li>
+              <li class="blogBox moreBox hide">
+                <div class="timeline-badge"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <img src="img/events/calendar-card-image.jpg"/>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                    <h5 href="#myModal" role="button" data-toggle="modal"> Details </h5>
+                </div>
+                </div>
+              </li>
+        </ul>
+        <div id="loadMore">
+            <a href="#">LOAD MORE...</a>
+         </div>
+    </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content">
+                <button type="button" data-dismiss="modal" class="btn-circle"><i class="fa fa-times"></i>
+                </button>
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <img src="img/events/calendar-card-image.jpg"/>
+                            <div class="custom-content">
+                                <h2 class="date"><span>Jun 28</span></h2>
+                                <h1 class="title">Meeting Ansmern</h1>
+                                <p>
+                                    Donec nec tincidunt tortor, ac ullamcorper tellus. Sed augue diam, porta et ex id, facilisis maximus arcu. 
+                                    Donec ultricies lorem sed nisi tristique, ut pulvinar metus malesuada. Curabitur egestas eleifend est, eu 
+                                    condimentum nulla finibus ut. Morbi quis nulla ut massa tincidunt dignissim in vitae lectus. Quisque nisl 
+                                    purus, lacinia vitae blandit eget, fermentum vitae sem. Nulla a bibendum arcu. Sed hendrerit ullamcorper 
+                                    commodo. Praesent sagittis nunc elementum metus feugiat, at tempus neque egestas. Sed dictum elit sed nulla 
+                                    mollis congue. Duis cursus suscipit ante id maximus. Ut enim leo, fringilla vel nibh eu, maximus hendrerit nibh.
+                                    Praesent convallis pulvinar elit, sed porta nisl finibus sed. Quisque vehicula nulla at tristique molestie.
+                                     Maecenas interdum vehicula sagittis. In hac habitasse platea dictumst. Duis volutpat molestie elit, 
+                                     eu ultricies ligula blandit vel. Nam mauris massa, condimentum id hendrerit a, tincidunt vitae elit.
+                                      Duis lacinia erat sit amet justo auctor, eget aliquet ipsum semper. Mauris vehicula erat sit amet neque
+                                       iaculis viverra. Suspendisse tempus pharetra dolor ac placerat. Integer eget maximus risus. 
+                                       Ut purus orci, efficitur eget libero a, volutpat scelerisque dui. Duis nec imperdiet nunc. 
+                                       Phasellus vitae risus eu ligula congue porta a eu mi. Aliquam ac dapibus mi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="time">
+                                <h2 class="above">Time</h2>
+                                <h1>9:00 AM - 11:00 AM</h1>
+                                <h3>Monday</h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="location">
+                                <h2 class="above">Location</h2>
+                                <h1>Paris, 32 Street</h1>
+                                <h3>France</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
